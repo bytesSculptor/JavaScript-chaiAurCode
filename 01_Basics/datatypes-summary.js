@@ -32,6 +32,35 @@ const myFunction = function(){
     console.log("Hello world");
 }
 
-console.log(typeof anotherId);
+// console.log(typeof anotherId);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+let myYoutubeName = "firstChannel";
+
+let secondYTName = myYoutubeName;
+
+secondYTName = "secondChannel";
+
+// console.log(myYoutubeName);
+// console.log(secondYTName);
+
+
+let userOne = {
+    email : "user@gmail.com",
+    id : 89123
+}
+
+console.log(userOne);
+
+let userTwo = userOne;
+
+userTwo.id = 90123;
+
+console.log(userTwo)
+console.log(userOne)
