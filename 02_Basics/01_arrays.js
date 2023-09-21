@@ -26,7 +26,7 @@ const myArr2 = new Array(1, 2, 3, 4)
 // console.log(myArr.indexOf(13));
 // console.log(myArr);
 
-const newArr = myArr.join()
+const newArr = myArr.join() // 0,1,2,3,4,5 => type-string
 
 // console.log(myArr);
 // console.log(typeof myArr);
