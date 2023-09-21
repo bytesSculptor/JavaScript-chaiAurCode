@@ -23,7 +23,7 @@ const real_another_array = another_array.flat(Infinity);
 
 console.log(Array.from("BytesSculptor"));
 console.log(Array.isArray("BytesSculptor"));
-console.log(Array.from({name: "Alex"})); // interesting
+console.log(Array.from({name: "Alex"})); // interesting O/P => []
 
 let score1 = 100
 let score2 = 200
