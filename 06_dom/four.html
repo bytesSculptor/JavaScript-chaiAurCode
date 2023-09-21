@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Edit and Remove Elements</title>
+</head>
+<body style="background-color: #212121; color: #f5892b">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguages(lang){
+        const li = document.createElement("li");
+        li.innerHTML = `${lang}` // not a good way to add text
+        document.querySelector(".language").appendChild(li);
+    }
+    addLanguages("Python")
+
+
+    //optimized code to add text on document 
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptiLanguage('Java')
+    addOptiLanguage('Dart')
+
+
+    // Edit 
+    const secondListItem = document.querySelector('li:nth-child(2)');
+    // console.log(secondListItem);
+    // secondListItem.innerText = "Mojo";
+
+    const liTwo = document.createElement('li')
+    liTwo.textContent = 'Golang'
+    secondListItem.replaceWith(liTwo)
+
+    // Edit 
+    const firstLang = document.querySelector('li:first-child');
+    // console.log(firstLang);
+    firstLang.outerHTML = `<h4>Languages</h4>`;
+
+
+    // Remove
+    const removeLastLi = document.querySelector('li:last-child');
+    removeLastLi.remove();
+
+</script>
+</html>
