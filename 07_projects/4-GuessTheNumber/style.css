@@ -3,9 +3,9 @@ html {
 }
 
 body {
-    width: 300px;
-    max-width: 750px;
-    min-width: 480px;
+    /* width: 300px; */
+    /* max-width: 750px; */
+    /* min-width: 480px; */
     margin: 0 auto;
     background-color: #212121;
 }
@@ -42,6 +42,23 @@ button {
     border-style: none;
     margin-top: 50px;
     /* margin-left: 75px; */
+    cursor: pointer;
+}
+
+#reset {
+    background-color: #161616;
+    color: #ffffff;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    border-style: none;
+    margin-top: 50px;
+    /* margin-left: 75px; */
+    cursor: pointer;
+    display: none;
+    /* display: contents; */
+
 }
 
 #guessField {
@@ -76,11 +93,13 @@ button {
     background-color: #474747;
     color: #fff;
     font-size: 25px;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
 h1 {
     background-color: #161616;
-
+    border-radius: 10px 10px 0 0;
     color: #fff;
     text-align: center;
 }
