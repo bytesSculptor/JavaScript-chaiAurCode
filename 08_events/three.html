@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Events | setInterval</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <h1>Learning Events setTimeout</h1>
+    <button id="start" style="cursor: pointer;">Start</button>
+    <button id="stop" style="cursor: pointer;">Stop</button>
+    <h1 id="time"></h1>
+</body>
+<script>
+    // const sayTime = function(){
+    //     let date = new Date()
+    //     console.log("Learning Events setInterval", date.toLocaleTimeString())
+    // }
+
+    // const intervalId = setInterval(sayTime, 1000);
+
+    // clearInterval(intervalId);
+
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");       
+    const time = document.getElementById("time");
+
+    const changeTime = function () {
+        let date = new Date()
+        time.innerText = date.toLocaleTimeString()
+    }
+
+    let startTime;
+
+    start.addEventListener('click', function () {
+        startTime = setInterval(changeTime, 1000);
+    })
+
+    stop.addEventListener('click', function () {
+        clearInterval(startTime);
+    })
+</script>
+
+</html>
