@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h1>API Request</h1>
+    <hr>
+    <li>0 UNSENT Client has been created. open() not called yet.</li>
+    <li>1 OPENED open() has been called.</li>
+    <li>2 HEADERS_RECEIVED send() has been called, and headers and status are available.</li>
+    <li>3 LOADING Downloading; responseText holds partial data.</li>
+    <li>4 DONE The operation is complete.</li>
+    <img src="" alt="">
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/mohdaquib171'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL);     
+    xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState); 
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            // console.log(typeof data);
+            console.log(data.followers)
+            console.log(data.avatar_url)
+
+            const card = document.createElement('div');
+            console.log(card);
+            card.style.backgroundColor = 'tomato'
+            card.style.maxWidth = '300px';
+            card.style.margin = '0 auto';
+            card.style.padding = '25px 20px';
+            card.style.borderRadius = '10px';
+            card.style.textAlign = 'center';
+            
+            const cardHeading = document.createElement('p');
+            cardHeading.innerText = data.login;
+            cardHeading.style.fontSize = '30px'
+            cardHeading.style.margin = '0 0 15px 0'
+            cardHeading.style.fontWeight = 'bold'
+            cardHeading.style.fontFamily = 'Monospace'
+            // console.log(cardHeading);
+
+            const cardImg = document.createElement('img');
+            cardImg.setAttribute('src', data.avatar_url)
+            //console.log(cardImg)
+            cardImg.style.maxWidth = '250px';
+            cardImg.style.borderRadius = '50%';
+
+            const bio = document.createElement('p');
+            bio.innerText = data.bio;
+            // console.log(bio)
+            bio.style.fontFamily = 'Monospace'
+
+            card.append(cardHeading, cardImg, bio)
+            
+            document.body.append(card)
+            
+        }       
+    }
+    xhr.send();
+</script>
+</html>
